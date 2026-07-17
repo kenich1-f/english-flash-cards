@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Flash Cards</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>英単語フラッシュカード</h1>
+<p>English Flash Cards Version 1</p>
+</header>
+
+<main class="container">
+
+<section id="homeScreen" class="screen active">
+
+<h2>学習設定</h2>
+
+<div class="menu">
+
+<label>学習範囲</label>
+
+<select id="rangeSelect">
+<option value="401-600">401〜600</option>
+<option value="601-800">601〜800</option>
+<option value="801-1000">801〜1000</option>
+<option value="1001-1200">1001〜1200</option>
+<option value="1201-1400">1201〜1400</option>
+<option value="1401-1600">1401〜1600</option>
+<option value="1601-1800">1601〜1800</option>
+<option value="all">すべて</option>
+</select>
+
+<label>学習モード</label>
+
+<select id="modeSelect">
+<option value="normal">通常</option>
+<option value="shuffle">シャッフル</option>
+<option value="random">ランダム</option>
+</select>
+
+<div class="switch">
+<span>ダークモード</span>
+<input type="checkbox" id="darkMode">
+</div>
+
+<button id="startBtn" class="primary">
+学習開始
+</button>
+
+<button id="reviewBtn" class="green">
+苦手単語だけ復習
+</button>
+
+</div>
+
+</section>
+
+<section id="studyScreen" class="screen">
+
+<div id="progress" class="progress">
+0 / 0
+</div>
+
+<div id="card" class="card">
+Loading...
+</div>
+
+<div class="controls">
+
+<button id="flipBtn" class="primary">
+答えを見る
+</button>
+
+<button id="knownBtn" class="green">
+覚えた
+</button>
+
+<button id="unknownBtn" class="red">
+まだ
+</button>
+
+</div>
+
+<div class="navigation">
+
+<button id="prevBtn" class="gray">
+← 前へ
+</button>
+
+<button id="nextBtn" class="gray">
+次へ →
+</button>
+
+</div>
+
+<button id="homeBtn" class="primary home">
+ホームへ戻る
+</button>
+
+</section>
+
+</main>
+
+<footer>
+English Flash Cards Version 1
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
