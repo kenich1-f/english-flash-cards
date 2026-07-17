@@ -611,10 +611,35 @@ let showMeaning = false;
 
 let reviewMode = false;
 
-let wrongWords =
-JSON.parse(
-localStorage.getItem("wrongWords")
-) || [];
+let currentRange = "all";
+
+let wrongWords = (() => {
+    const stored = localStorage.getItem("wrongWords");
+    if (typeof stored === "string") {
+        try {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) {
+                return {
+                    "401-600": parsed,
+                    "601-800": [],
+                    "801-1000": []
+                };
+            }
+            return parsed;
+        } catch (e) {
+            return {
+                "401-600": [],
+                "601-800": [],
+                "801-1000": []
+            };
+        }
+    }
+    return {
+        "401-600": [],
+        "601-800": [],
+        "801-1000": []
+    };
+})();
 
 /* =====================================
    DARK MODE
@@ -703,7 +728,7 @@ function createCards(){
 
     if(reviewMode){
 
-        list=[...wrongWords];
+        list=[...(wrongWords[currentRange] || [])];
 
     }
 
@@ -903,8 +928,14 @@ function addWrongWord(){
     cards[currentIndex];
 
 
+    const rangeKey = currentRange;
+    if(!wrongWords[rangeKey]){
+        wrongWords[rangeKey] = [];
+    }
+
+
     const exists =
-    wrongWords.some(
+    wrongWords[rangeKey].some(
         w =>
         w.id===target.id
     );
@@ -912,7 +943,7 @@ function addWrongWord(){
 
     if(!exists){
 
-        wrongWords.push(target);
+        wrongWords[rangeKey].push(target);
 
 
         localStorage.setItem(
@@ -943,11 +974,14 @@ function removeFromWrongWords(){
     cards[currentIndex];
 
 
-    wrongWords =
-    wrongWords.filter(
-        w =>
-        w.id !== target.id
-    );
+    const rangeKey = currentRange;
+    if(wrongWords[rangeKey]){
+        wrongWords[rangeKey] =
+        wrongWords[rangeKey].filter(
+            w =>
+            w.id !== target.id
+        );
+    }
 
 
     localStorage.setItem(
@@ -966,6 +1000,7 @@ function startStudy(){
 
     reviewMode=false;
 
+    currentRange = rangeSelect.value;
 
     cards =
     createCards();
@@ -991,8 +1026,11 @@ function startStudy(){
 
 function startReview(){
 
+    currentRange = rangeSelect.value;
+
     if(
-        wrongWords.length===0
+        !wrongWords[currentRange] ||
+        wrongWords[currentRange].length===0
     ){
 
         alert(
