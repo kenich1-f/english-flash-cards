@@ -929,6 +929,36 @@ function addWrongWord(){
 
 
 /* =====================================
+   REMOVE FROM WRONG WORDS
+===================================== */
+
+function removeFromWrongWords(){
+
+    if(cards.length===0){
+        return;
+    }
+
+
+    const target =
+    cards[currentIndex];
+
+
+    wrongWords =
+    wrongWords.filter(
+        w =>
+        w.id !== target.id
+    );
+
+
+    localStorage.setItem(
+        "wrongWords",
+        JSON.stringify(wrongWords)
+    );
+
+}
+
+
+/* =====================================
    START STUDY
 ===================================== */
 
@@ -1033,7 +1063,15 @@ card.addEventListener(
 
 knownBtn.addEventListener(
     "click",
-    nextCard
+    ()=>{
+
+        if(reviewMode){
+            removeFromWrongWords();
+        }
+
+        nextCard();
+
+    }
 );
 
 
