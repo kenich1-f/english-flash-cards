@@ -1,0 +1,324 @@
+/* =====================================
+   English Flash Cards Version 1
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#f3f6fc;
+    --card:#ffffff;
+    --text:#222;
+    --sub:#666;
+
+    --blue:#2563eb;
+    --green:#16a34a;
+    --red:#dc2626;
+    --gray:#6b7280;
+
+    --shadow:0 12px 25px rgba(0,0,0,.12);
+
+}
+
+body.dark{
+
+    --bg:#111827;
+    --card:#1f2937;
+    --text:#f9fafb;
+    --sub:#d1d5db;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:
+
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+    min-height:100vh;
+
+    transition:.25s;
+
+}
+header{
+
+    text-align:center;
+
+    padding:30px 20px 10px;
+
+}
+
+header h1{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    color:var(--sub);
+
+}
+
+.container{
+
+    width:95%;
+
+    max-width:520px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+.screen{
+
+    display:none;
+
+}
+
+.screen.active{
+
+    display:block;
+
+}
+
+.menu{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.menu label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+    margin-bottom:8px;
+
+}
+
+.menu select{
+
+    width:100%;
+
+    padding:14px;
+
+    font-size:1rem;
+
+    border-radius:12px;
+
+    border:1px solid #ccc;
+
+    margin-bottom:10px;
+
+}
+
+.switch{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:20px 0;
+
+}
+
+.progress{
+
+    text-align:center;
+
+    font-size:1.1rem;
+
+    color:var(--sub);
+
+    margin-bottom:18px;
+
+}
+
+.card{
+
+    background:var(--card);
+
+    box-shadow:var(--shadow);
+
+    border-radius:20px;
+
+    min-height:240px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    font-size:2rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.2s;
+
+    margin-bottom:25px;
+
+}
+
+.card:active{
+
+    transform:scale(.98);
+
+}
+
+.controls{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.navigation{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+button{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:15px;
+
+    font-size:1rem;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+.primary{
+
+    background:var(--blue);
+
+}
+
+.green{
+
+    background:var(--green);
+
+}
+
+.red{
+
+    background:var(--red);
+
+}
+
+.gray{
+
+    background:var(--gray);
+
+}
+
+.home{
+
+    width:100%;
+
+}
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:var(--sub);
+
+}
+
+@media(max-width:600px){
+
+    header h1{
+
+        font-size:1.6rem;
+
+    }
+
+    .card{
+
+        min-height:190px;
+
+        font-size:1.6rem;
+
+    }
+
+    .controls{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .navigation{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
