@@ -844,6 +844,49 @@ function showCard(){
         return;
 
     }
+  /* =====================================
+   SHOW CARD
+===================================== */
+
+function showCard(){
+
+    if(cards.length===0){
+
+        progress.textContent="0 / 0";
+
+        card.textContent="単語がありません";
+
+        return;
+
+    }
+
+    const current =
+    cards[currentIndex];
+
+    if(showMeaning){
+
+        card.textContent=
+        current.meaning;
+
+        flipBtn.textContent=
+        "英語を見る";
+
+    }
+
+    else{
+
+        card.textContent=
+        current.word;
+
+        flipBtn.textContent=
+        "答えを見る";
+
+    }
+
+    progress.textContent=
+    `${currentIndex+1} / ${cards.length}`;
+
+}
 /* =====================================
    CREATE CARDS
 ===================================== */
@@ -912,35 +955,7 @@ function createCards(){
 
 }
 
-    const current =
-    cards[currentIndex];
-
-
-    if(showMeaning){
-
-        card.textContent=
-        current.meaning;
-
-        flipBtn.textContent=
-        "英語を見る";
-
-    }
-
-    else{
-
-        card.textContent=
-        current.word;
-
-        flipBtn.textContent=
-        "答えを見る";
-
-    }
-
-
-    progress.textContent=
-    `${currentIndex+1} / ${cards.length}`;
-
-}
+    
 /* =====================================
    FLIP CARD
 ===================================== */
