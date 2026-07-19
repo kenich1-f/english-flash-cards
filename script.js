@@ -832,6 +832,25 @@ function shuffle(array){
    CREATE CARDS
 ===================================== */
 
+
+
+
+/* =====================================
+   SHOW CARD
+===================================== */
+
+function showCard(){
+
+    if(cards.length===0){
+
+        progress.textContent="0 / 0";
+
+        card.textContent=
+        "単語がありません";
+
+        return;
+
+    }
 function createCards(){
 
     let list=[...words];
@@ -892,25 +911,6 @@ function createCards(){
     return list;
 
 }
-
-
-/* =====================================
-   SHOW CARD
-===================================== */
-
-function showCard(){
-
-    if(cards.length===0){
-
-        progress.textContent="0 / 0";
-
-        card.textContent=
-        "単語がありません";
-
-        return;
-
-    }
-
 
     const current =
     cards[currentIndex];
@@ -1071,7 +1071,8 @@ function addWrongWord(){
 
 
 /* =====================================
-   REMOVE FROM WRONG WORDS
+   REMOVE FROM WRONG 
+WORDS
 ===================================== */
 
 function removeFromWrongWords(){
@@ -1101,7 +1102,6 @@ function removeFromWrongWords(){
     );
 
 }
-
 
 /* =====================================
    START STUDY
