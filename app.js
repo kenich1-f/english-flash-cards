@@ -101,7 +101,13 @@ function shuffle(array){
 /* ---------- 範囲取得 ---------- */
 
 function getRangeWords(){
+if (range.value === "last100") {
 
+    return WORDS.filter(
+        w => LAST100.includes(w.word)
+    );
+
+}
     if(reviewMode){
 
         return WORDS.filter(
