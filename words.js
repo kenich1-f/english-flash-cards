@@ -1,4 +1,4 @@
-[
+const WORDS = [
   { "id": 401, "word": "pain", "meaning": "痛み" },
   { "id": 405, "word": "immediately", "meaning": "直ちに" },
   { "id": 408, "word": "indeed", "meaning": "本当に" },
