@@ -202,16 +202,7 @@ function startStudy(){
 
 
 /* ---------- 苦手復習 ---------- */
-function startReview(){
 
-    alert("wrongIds = " + JSON.stringify(wrongIds));
-
-    reviewMode=true;
-
-    cards=getRangeWords();
-
-    ...
-}
 function startReview(){
 
     reviewMode=true;
@@ -445,3 +436,4 @@ home.style.display="block";
 console.log("app.js loaded");
 alert("app.js loaded");
 alert(typeof WORDS);
+alert(typeof LAST100);
