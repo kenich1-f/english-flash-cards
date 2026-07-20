@@ -202,7 +202,16 @@ function startStudy(){
 
 
 /* ---------- 苦手復習 ---------- */
+function startReview(){
 
+    alert("wrongIds = " + JSON.stringify(wrongIds));
+
+    reviewMode=true;
+
+    cards=getRangeWords();
+
+    ...
+}
 function startReview(){
 
     reviewMode=true;
