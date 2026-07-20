@@ -434,6 +434,6 @@ homeBtn.addEventListener(
 study.style.display="none";
 home.style.display="block";
 console.log("app.js loaded");
-alert("app.js loaded");
+
 alert(typeof WORDS);
 alert(typeof LAST100);
