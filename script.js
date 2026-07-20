@@ -570,7 +570,7 @@ const WORDS =[
    English Flash Cards
    Complete Version
 ===================================== */
-
+alert("script loaded");
 /* =====================================
    DOM
 ===================================== */
