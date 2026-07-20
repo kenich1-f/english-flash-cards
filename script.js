@@ -832,18 +832,7 @@ function shuffle(array){
    SHOW CARD
 ===================================== */
 
-function showCard(){
 
-    if(cards.length===0){
-
-        progress.textContent="0 / 0";
-
-        card.textContent=
-        "単語がありません";
-
-        return;
-
-    }
   /* =====================================
    SHOW CARD
 ===================================== */
