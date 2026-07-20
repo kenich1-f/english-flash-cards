@@ -1110,7 +1110,7 @@ function removeFromWrongWords(){
 /* =====================================
    START STUDY
 ===================================== */
-
+alert("startStudyが呼ばれました");
 function startStudy(){
 
     reviewMode=false;
