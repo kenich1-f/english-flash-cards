@@ -563,3 +563,4 @@ const WORDS = [
   { "id": 1796, "word": "wicked", "meaning": "邪悪な" },
   { "id": 1797, "word": "sustain", "meaning": "支える" },
   { "id": 1798, "word": "embarrass", "meaning": "当惑させる" }
+];
