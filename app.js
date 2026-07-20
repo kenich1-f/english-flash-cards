@@ -288,36 +288,38 @@ function prevCard(){
 /* ---------- 苦手単語追加 ---------- */
 function addWrongWord(){
 
-    alert("① addWrongWord 開始");
+    alert("①");
+
+    alert("wrongIds = " + JSON.stringify(wrongIds));
+
+    alert("Array? " + Array.isArray(wrongIds));
 
     if(cards.length===0) return;
 
     const id = cards[index].id;
 
-    alert("② id = " + id);
+    alert("② id=" + id);
 
     if(!wrongIds.includes(id)){
 
+        alert("③");
+
         wrongIds.push(id);
 
-        alert("③ 保存前");
+        alert("④");
 
         localStorage.setItem(
             "wrongWords",
             JSON.stringify(wrongIds)
         );
 
-        alert("④ 保存完了");
+        alert("⑤");
     }
-
-    alert("⑤ nextCardへ");
 
     nextCard();
 
-    alert("⑥ 終了");
+    alert("⑥");
 }
-
-
 
 /* ---------- 苦手単語から削除 ---------- */
 
