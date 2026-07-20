@@ -602,118 +602,8 @@ const homeBtn = document.getElementById("homeBtn");
 ===================================== */
 
 let words = WORDS;
-/* =====================================
-   LAST 100 WORDS
-===================================== */
 
-const LAST100 = [
 
-"appropriate",
-"available",
-"determine",
-"contribute",
-"participate",
-"establish",
-"significant",
-"obtain",
-"preserve",
-"associate",
-"acquire",
-"appreciate",
-"adapt",
-"construct",
-"pursue",
-"potential",
-"distinguish",
-"persuade",
-"demonstrate",
-"convince",
-
-"eliminate",
-"transform",
-"absorb",
-"interpret",
-"consult",
-"guarantee",
-"investigate",
-"ensure",
-"assess",
-"undertake",
-"respond",
-"maintain",
-"operate",
-"illustrate",
-"conduct",
-"reveal",
-"intend",
-"indicate",
-"complain",
-"attract",
-
-"essential",
-"rely",
-"concentrate",
-"consist",
-"declare",
-"compete",
-"promote",
-"efficient",
-"occupy",
-"register",
-"obey",
-"devote",
-"surround",
-"predict",
-"pretend",
-"cope",
-"overcome",
-"convey",
-"abandon",
-"advertise",
-
-"impact",
-"wander",
-"defeat",
-"interrupt",
-"vanish",
-"withdraw",
-"alter",
-"deserve",
-"disturb",
-"punish",
-"cease",
-"descend",
-"analyze",
-"employ",
-"imply",
-"interfere",
-"resemble",
-"exclude",
-"venture",
-"pose",
-
-"cite",
-"resolve",
-"submit",
-"assure",
-"conquer",
-"retain",
-"imitate",
-"expire",
-"acknowledge",
-"dismiss",
-"restrict",
-"yield",
-"distribute",
-"regulate",
-"negotiate",
-"resign",
-"sustain",
-"compromise",
-"reckon",
-"deposit"
-
-];
 let cards = [];
 
 let currentIndex = 0;
@@ -731,25 +621,40 @@ let wrongWords = (() => {
             const parsed = JSON.parse(stored);
             if (Array.isArray(parsed)) {
                 return {
-                    "401-600": parsed,
-                    "601-800": [],
-                    "801-1000": []
-                };
+    "401-600": [],
+    "601-800": [],
+    "801-1000": [],
+    "1001-1200": [],
+    "1201-1400": [],
+    "1401-1600": [],
+    "1601-1800": [],
+    "all": []
+};
             }
             return parsed;
         } catch (e) {
             return {
-                "401-600": [],
-                "601-800": [],
-                "801-1000": []
-            };
+    "401-600": [],
+    "601-800": [],
+    "801-1000": [],
+    "1001-1200": [],
+    "1201-1400": [],
+    "1401-1600": [],
+    "1601-1800": [],
+    "all": []
+};
         }
     }
     return {
-        "401-600": [],
-        "601-800": [],
-        "801-1000": []
-    };
+    "401-600": [],
+    "601-800": [],
+    "801-1000": [],
+    "1001-1200": [],
+    "1201-1400": [],
+    "1401-1600": [],
+    "1601-1800": [],
+    "all": []
+};
 })();
 
 /* =====================================
