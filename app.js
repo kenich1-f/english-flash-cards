@@ -295,27 +295,37 @@ function prevCard(){
 
 }
 /* ---------- 苦手単語追加 ---------- */
-
 function addWrongWord(){
+
+    alert("① addWrongWord 開始");
 
     if(cards.length===0) return;
 
-    const id=cards[index].id;
+    const id = cards[index].id;
+
+    alert("② id = " + id);
 
     if(!wrongIds.includes(id)){
 
         wrongIds.push(id);
+
+        alert("③ 保存前");
 
         localStorage.setItem(
             "wrongWords",
             JSON.stringify(wrongIds)
         );
 
+        alert("④ 保存完了");
     }
+
+    alert("⑤ nextCardへ");
 
     nextCard();
 
+    alert("⑥ 終了");
 }
+
 
 
 /* ---------- 苦手単語から削除 ---------- */
