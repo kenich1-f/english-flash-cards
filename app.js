@@ -101,17 +101,21 @@ function shuffle(array){
 /* ---------- 範囲取得 ---------- */
 
 function getRangeWords(){
-if (range.value === "last100") {
 
-    return WORDS.filter(
-        w => LAST100.includes(w.word)
-    );
-
-}
+    // 苦手復習を最優先
     if(reviewMode){
 
         return WORDS.filter(
-            w=>wrongIds.includes(w.id)
+            w => wrongIds.includes(w.id)
+        );
+
+    }
+
+    // 試験直前100語
+    if(range.value==="last100"){
+
+        return WORDS.filter(
+            w => LAST100.includes(w.word)
         );
 
     }
@@ -122,22 +126,17 @@ if (range.value === "last100") {
 
     }
 
-    const split =
-    range.value.split("-");
+    const split = range.value.split("-");
 
-    const min =
-    Number(split[0]);
-
-    const max =
-    Number(split[1]);
+    const min = Number(split[0]);
+    const max = Number(split[1]);
 
     return WORDS.filter(
-        w=>
-        w.id>=min &&
-        w.id<=max
+        w =>
+        w.id >= min &&
+        w.id <= max
     );
 
-  
 }
 /* ---------- カード表示 ---------- */
 
