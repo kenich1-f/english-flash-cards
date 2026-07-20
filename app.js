@@ -43,10 +43,7 @@ let reviewMode = false;
 
 /* ---------- 苦手単語 ---------- */
 
-let wrongIds =
-JSON.parse(
-localStorage.getItem("wrongWords")
-) || [];
+let wrongIds = [];
 
 
 /* ---------- ダークモード ---------- */
