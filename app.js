@@ -285,28 +285,11 @@ function prevCard(){
 /* ---------- 苦手単語追加 ---------- */
 function addWrongWord(){
 
-    alert("①");
-
-    if(cards.length===0){
-        alert("cardsが空");
-        return;
-    }
+    if(cards.length===0) return;
 
     const id = cards[index].id;
 
-    alert("② id = " + id);
-
-    alert("wrongIdsの型 = " + typeof wrongIds);
-
-    alert("Array = " + Array.isArray(wrongIds));
-
-    alert("includesの型 = " + typeof wrongIds.includes);
-
-    alert("③ 手前");
-
     if(!wrongIds.includes(id)){
-
-        alert("④");
 
         wrongIds.push(id);
 
@@ -318,6 +301,7 @@ function addWrongWord(){
     }
 
     nextCard();
+
 }
 /* ---------- 苦手単語から削除 ---------- */
 
@@ -435,5 +419,4 @@ study.style.display="none";
 home.style.display="block";
 console.log("app.js loaded");
 
-alert(typeof WORDS);
-alert(typeof LAST100);
+
