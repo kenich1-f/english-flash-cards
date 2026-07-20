@@ -287,37 +287,38 @@ function addWrongWord(){
 
     alert("①");
 
-    alert("wrongIds = " + JSON.stringify(wrongIds));
-
-    alert("Array? " + Array.isArray(wrongIds));
-
-    if(cards.length===0) return;
+    if(cards.length===0){
+        alert("cardsが空");
+        return;
+    }
 
     const id = cards[index].id;
 
-    alert("② id=" + id);
+    alert("② id = " + id);
+
+    alert("wrongIdsの型 = " + typeof wrongIds);
+
+    alert("Array = " + Array.isArray(wrongIds));
+
+    alert("includesの型 = " + typeof wrongIds.includes);
+
+    alert("③ 手前");
 
     if(!wrongIds.includes(id)){
 
-        alert("③");
+        alert("④");
 
         wrongIds.push(id);
-
-        alert("④");
 
         localStorage.setItem(
             "wrongWords",
             JSON.stringify(wrongIds)
         );
 
-        alert("⑤");
     }
 
     nextCard();
-
-    alert("⑥");
 }
-
 /* ---------- 苦手単語から削除 ---------- */
 
 function removeWrongWord(){
